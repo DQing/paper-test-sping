@@ -9,8 +9,9 @@
       <case-sensitivity plain-identifiers="exact" quoted-identifiers="exact" />
       <secret-storage>master_key</secret-storage>
       <user-name>root</user-name>
-      <introspection-scope>paperTest:</introspection-scope>
+      <introspection-schemas>*:paperTest|paperTest:</introspection-schemas>
       <resolve-scope>paperTest:</resolve-scope>
+      <unqualified-resolve-schemas>paperTest:</unqualified-resolve-schemas>
     </data-source>
   </component>
 </project>

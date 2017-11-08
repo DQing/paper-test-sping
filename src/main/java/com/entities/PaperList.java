@@ -1,6 +1,4 @@
-package hello;
-
-import org.springframework.beans.factory.annotation.Autowired;
+package com.entities;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -8,19 +6,18 @@ import javax.persistence.Id;
 
 @Entity
 public class PaperList {
-    private Integer id;
+    private int id;
     private String name;
-    private String create_time;
+    private String createTime;
     private String creator;
 
     @Id
     @GeneratedValue
-
-    public Integer getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -32,12 +29,12 @@ public class PaperList {
         this.name = name;
     }
 
-    public String getCreate_time() {
-        return create_time;
+    public String getCreateTime() {
+        return createTime;
     }
 
-    public void setCreate_time(String create_time) {
-        this.create_time = create_time;
+    public void setCreateTime(String createTime) {
+        this.createTime = createTime;
     }
 
     public String getCreator() {

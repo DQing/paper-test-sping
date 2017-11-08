@@ -1,157 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataSource name="MySQL - paperTest@localhost">
-  <database-model serializer="dbm" rdbms="MYSQL" format-version="2.6">
-    <schema id="1" name="paperTest">
-      <visible>1</visible>
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.4">
+    <root id="1"/>
+    <schema id="2" parent="1" name="paperTest">
+      <Current>1</Current>
+      <Visible>1</Visible>
     </schema>
-    <schema id="2" name="demo"/>
-    <schema id="3" name="goods_in_out_system"/>
-    <schema id="4" name="information_schema"/>
-    <schema id="5" name="jenkins"/>
-    <schema id="6" name="mysql"/>
-    <schema id="7" name="new_schema"/>
-    <schema id="8" name="performance_schema"/>
-    <schema id="9" name="sys"/>
-    <schema id="10" name="test"/>
-    <table id="11" parent="1" name="customer"/>
-    <table id="12" parent="1" name="options"/>
-    <table id="13" parent="1" name="paper"/>
-    <table id="14" parent="1" name="paperAnswer"/>
-    <table id="15" parent="1" name="paperList"/>
-    <table id="16" parent="1" name="paper_list"/>
-    <table id="17" parent="1" name="quiz"/>
-    <column id="18" parent="11" name="id">
-      <mandatory>1</mandatory>
-      <data-type>bigint(20)|0</data-type>
-      <sequence-identity>1</sequence-identity>
+    <schema id="3" parent="1" name="information_schema"/>
+    <schema id="4" parent="1" name="mysql"/>
+    <schema id="5" parent="1" name="performance_schema"/>
+    <schema id="6" parent="1" name="sys"/>
+    <schema id="7" parent="1" name="paper"/>
+    <table id="8" parent="2" name="paper_list"/>
+    <column id="9" parent="8" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="19" parent="11" name="first_name">
-      <data-type>varchar(255)|0</data-type>
+    <column id="10" parent="8" name="create_time">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
     </column>
-    <column id="20" parent="11" name="last_name">
-      <data-type>varchar(255)|0</data-type>
+    <column id="11" parent="8" name="creator">
+      <Position>3</Position>
+      <DataType>varchar(255)|0</DataType>
     </column>
-    <key id="21" parent="11" name="PRIMARY">
-      <columns>id</columns>
-      <primary>1</primary>
-    </key>
-    <column id="22" parent="12" name="id">
-      <mandatory>1</mandatory>
-      <data-type>int(11)|0</data-type>
-      <sequence-identity>1</sequence-identity>
+    <column id="12" parent="8" name="name">
+      <Position>4</Position>
+      <DataType>varchar(255)|0</DataType>
     </column>
-    <column id="23" parent="12" name="Qid">
-      <mandatory>1</mandatory>
-      <data-type>int(11)|0</data-type>
-    </column>
-    <column id="24" parent="12" name="content">
-      <mandatory>1</mandatory>
-      <data-type>varchar(45)|0</data-type>
-    </column>
-    <key id="25" parent="12" name="PRIMARY">
-      <columns>id</columns>
-      <primary>1</primary>
-    </key>
-    <column id="26" parent="13" name="id">
-      <mandatory>1</mandatory>
-      <data-type>int(11)|0</data-type>
-    </column>
-    <column id="27" parent="13" name="create_time">
-      <data-type>varchar(255)|0</data-type>
-    </column>
-    <column id="28" parent="13" name="creator">
-      <data-type>varchar(255)|0</data-type>
-    </column>
-    <column id="29" parent="13" name="name">
-      <data-type>varchar(255)|0</data-type>
-    </column>
-    <key id="30" parent="13" name="PRIMARY">
-      <columns>id</columns>
-      <primary>1</primary>
-    </key>
-    <column id="31" parent="14" name="id">
-      <mandatory>1</mandatory>
-      <data-type>int(11)|0</data-type>
-      <sequence-identity>1</sequence-identity>
-    </column>
-    <column id="32" parent="14" name="PLid">
-      <mandatory>1</mandatory>
-      <data-type>int(11)|0</data-type>
-    </column>
-    <column id="33" parent="14" name="answer">
-      <mandatory>1</mandatory>
-      <data-type>varchar(100)|0</data-type>
-    </column>
-    <column id="34" parent="14" name="submitTime">
-      <mandatory>1</mandatory>
-      <data-type>varchar(45)|0</data-type>
-    </column>
-    <key id="35" parent="14" name="PRIMARY">
-      <columns>id</columns>
-      <primary>1</primary>
-    </key>
-    <column id="36" parent="15" name="id">
-      <mandatory>1</mandatory>
-      <data-type>int(11)|0</data-type>
-      <sequence-identity>1</sequence-identity>
-    </column>
-    <column id="37" parent="15" name="name">
-      <mandatory>1</mandatory>
-      <data-type>varchar(100)|0</data-type>
-    </column>
-    <column id="38" parent="15" name="createTime">
-      <mandatory>1</mandatory>
-      <data-type>varchar(45)|0</data-type>
-    </column>
-    <column id="39" parent="15" name="creator">
-      <mandatory>1</mandatory>
-      <data-type>varchar(45)|0</data-type>
-    </column>
-    <key id="40" parent="15" name="PRIMARY">
-      <columns>id</columns>
-      <primary>1</primary>
-    </key>
-    <column id="41" parent="16" name="id">
-      <mandatory>1</mandatory>
-      <data-type>int(11)|0</data-type>
-    </column>
-    <column id="42" parent="16" name="create_time">
-      <data-type>varchar(255)|0</data-type>
-    </column>
-    <column id="43" parent="16" name="creator">
-      <data-type>varchar(255)|0</data-type>
-    </column>
-    <column id="44" parent="16" name="name">
-      <data-type>varchar(255)|0</data-type>
-    </column>
-    <key id="45" parent="16" name="PRIMARY">
-      <columns>id</columns>
-      <primary>1</primary>
-    </key>
-    <column id="46" parent="17" name="id">
-      <mandatory>1</mandatory>
-      <data-type>int(11)|0</data-type>
-      <sequence-identity>1</sequence-identity>
-    </column>
-    <column id="47" parent="17" name="pid">
-      <mandatory>1</mandatory>
-      <data-type>int(11)|0</data-type>
-    </column>
-    <column id="48" parent="17" name="type">
-      <mandatory>1</mandatory>
-      <data-type>int(11)|0</data-type>
-    </column>
-    <column id="49" parent="17" name="answer">
-      <mandatory>1</mandatory>
-      <data-type>varchar(45)|0</data-type>
-    </column>
-    <column id="50" parent="17" name="title">
-      <mandatory>1</mandatory>
-      <data-type>varchar(45)|0</data-type>
-    </column>
-    <key id="51" parent="17" name="PRIMARY">
-      <columns>id</columns>
-      <primary>1</primary>
+    <key id="13" parent="8" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
     </key>
   </database-model>
 </dataSource>
