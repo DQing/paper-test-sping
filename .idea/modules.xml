@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/paper-test-sping.iml" filepath="$PROJECT_DIR$/.idea/modules/paper-test-sping.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/paper-test-sping_main.iml" filepath="$PROJECT_DIR$/.idea/modules/paper-test-sping_main.iml" group="paper-test-sping" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/paper-test-sping_test.iml" filepath="$PROJECT_DIR$/.idea/modules/paper-test-sping_test.iml" group="paper-test-sping" />
+    </modules>
+  </component>
+</project>
