@@ -8,9 +8,7 @@
       </database-info>
       <case-sensitivity plain-identifiers="exact" quoted-identifiers="exact" />
       <user-name>paperTest</user-name>
-      <introspection-schemas>*:paperTest|paperTest:</introspection-schemas>
       <resolve-scope>paperTest:</resolve-scope>
-      <unqualified-resolve-schemas>paperTest:</unqualified-resolve-schemas>
     </data-source>
   </component>
 </project>
