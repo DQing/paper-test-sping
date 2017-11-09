@@ -16,15 +16,19 @@ public class PaperController {
     @Autowired
     private PaperListRepository paperListRepository;
 
-    @RequestMapping(value = "/api/getPaperList", method = RequestMethod.GET)
+    @RequestMapping(value = "/api/papers", method = RequestMethod.GET)
     public Map getPaperList() {
         Map<String, Object> result = new HashMap<>();
-        result.put("result", paperListRepository.findAll());
-
+        try {
+            result.put("code", 200);
+            result.put("data", paperListRepository.findAll());
+        } catch (Exception ex) {
+            result.put("exception", "查询异常");
+        }
         return result;
     }
 
-    @RequestMapping(value = "/api/update", method = RequestMethod.PUT)
+    @RequestMapping(value = "/api/paper", method = RequestMethod.PUT)
     public Map update(@RequestBody PaperList paperList) {
         Map<String, Object> result = new HashMap<>();
         PaperList paper = paperListRepository.findOne(paperList.getId());
@@ -36,20 +40,28 @@ public class PaperController {
     }
 
 
-    @RequestMapping(value = "/api/delete/{id}", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/api/paper/{id}", method = RequestMethod.DELETE)
     public Map delete(@PathVariable("id") int id) {
-        Map<String, String> result = new HashMap<>();
-        paperListRepository.delete(id);
-        result.put("result", "删除成功");
+        Map<String, Object> result = new HashMap<>();
+        try {
+            paperListRepository.delete(id);
+            result.put("code", 200);
+        } catch (Exception e) {
+            result.put("exception", "删除失败");
+        }
 
         return result;
     }
 
-    @PostMapping(value = "/api/save")
+    @PostMapping(value = "/api/paper")
     public Map postPaperListRepository(@RequestBody PaperList paperList) {
-        Map<String, String> result = new HashMap<>();
-        paperListRepository.save(paperList);
-        result.put("result", "添加成功");
+        Map<String, Object> result = new HashMap<>();
+        try {
+            paperListRepository.save(paperList);
+            result.put("code", 200);
+        } catch (Exception e) {
+            result.put("exception", "添加失败");
+        }
 
         return result;
     }
